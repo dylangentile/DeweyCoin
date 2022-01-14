@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#include "hash.h"
 #include "keccak.h"
 
 const char msg[] = "Sicko Mode!";
@@ -11,11 +12,10 @@ main(/*int argc, char const *argv[]*/)
 {
 	printf("DeweyCoin!!!\n\n");
 
-	uint8_t* hash = (uint8_t*)calloc(32, sizeof(*hash));
-	dc_hash((const uint8_t*)msg, msg_size, hash, 32);
-
-	for(int i = 0; i < 32; i++)
-		printf("%02x", hash[i]);
+	Hash hash;
+	dc_data_hash((const uint8_t*)msg, msg_size, &hash);
+	dc_hash_print(&hash);
+	
 	printf("\n\n");
 
 

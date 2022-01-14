@@ -1,5 +1,8 @@
 # DeweyCoin
 A Cryptocurrency.
 
-## Mission Statement
-Hello my fellow sigma males. We aren't like the other cryptocurrencies, we are a lifestyle. The goal, enhance crypto to levels never seen before.
+## Specification
+DeweyCoin is a standard PoW crypto-currency. The goal is to implement a peer-to-peer blockchain network in C. 
+
+
+The target rate for blocks should be a block every 30s. 

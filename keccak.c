@@ -4,7 +4,6 @@ https://github.com/XKCP/XKCP/blob/master/Standalone/CompactFIPS202/C/Keccak-read
 */
 
 #include "keccak.h"
-#include "assert.h"
 #define LITTLE_ENDIAN
 /*
 Implementation by the Keccak Team, namely, Guido Bertoni, Joan Daemen,
@@ -127,10 +126,9 @@ void FIPS202_SHA3_512(const unsigned char *input, unsigned int inputByteLen, uns
 }
 
 void 
-dc_hash(const uint8_t* input_buf, const uint64_t input_size,  uint8_t* const output, const uint64_t output_size)
+dc_data_hash(const uint8_t* input_buf, const uint64_t input_size, Hash* hash)
 {
-    assert(output_size >= 32 && "Output buffer used in dc_hash too small");
-    FIPS202_SHA3_256((const unsigned char*)input_buf, (unsigned long long int)input_size, (unsigned char*)output);
+    FIPS202_SHA3_256((const unsigned char*)input_buf, (unsigned long long int)input_size, (unsigned char*)hash);
 }
 
 

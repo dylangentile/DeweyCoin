@@ -1,7 +1,7 @@
 CC := clang
 CFLAGS := -Werror -Wall -Wextra -pedantic -std=c11 #-pthread
 
-OBJ := main.o keccak.o
+OBJ := main.o hash.o keccak.o
 TARGET := deweycore
 
 .PHONY: all clean depend
