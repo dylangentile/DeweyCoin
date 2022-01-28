@@ -12,6 +12,7 @@ typedef struct
 
 
 void dc_hash_print(const Hash* const hash);
+void dc_hash_add(Hash* sum, const Hash* const a, const Hash* const b); //note: this is not naive addition, it is a hash of the two hashes concatenated.
 
 
 
