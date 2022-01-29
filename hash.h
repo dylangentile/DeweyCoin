@@ -8,7 +8,7 @@
 typedef struct
 {
 	uint8_t byte_array[DC_HASH_SIZE];
-}Hash;
+} Hash;
 
 
 void dc_hash_print(const Hash* const hash);
