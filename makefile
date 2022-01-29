@@ -8,8 +8,15 @@ TARGET := deweycore
 
 all: $(TARGET)
 
-$(TARGET): $(OBJ)
-	$(CC) $(OBJ) -o $(TARGET)
+libsecp256k1.a:
+	cd secp256k1; \
+	./autogen.sh; \
+	./configure
+	make -C secp256k1
+	mv secp256k1/.libs/libsecp256k1.a .
+
+$(TARGET): libsecp256k1.a $(OBJ)
+	$(CC) libsecp256k1.a $(OBJ) -o $(TARGET)
 
 clean:
 	-rm *.o
