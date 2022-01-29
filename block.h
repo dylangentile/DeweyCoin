@@ -10,6 +10,7 @@ typedef struct
 } BlockHeader; //80 bytes
 
 
+
 typedef struct
 {
 	BlockHeader header;
