@@ -36,12 +36,13 @@ main(/*int argc, char const *argv[]*/)
 
 	printf("\n\n");
 
-	PrivateKey key = dc_key_private_generate();
-
-	dc_key_private_print(&key);
-
+	KeyPair key;
+	dc_key_generate(&key.private);
+	dc_key_make_public(&key.public, &key.private);
+	dc_key_private_print(&key.private);
+	printf("\n");
+	dc_key_public_print(&key.public);
 
 	printf("\n");
-
 	return 0;
 }
