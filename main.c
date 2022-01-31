@@ -3,11 +3,15 @@
 
 #include "hash.h"
 #include "keccak.h"
+#include "key.h"
 
 const char msg[] = "Sicko Mode!";
 const size_t msg_size = sizeof(msg);
 const char msg_2[] = "ZA WARUDO";
 const size_t msg_2_size = sizeof(msg_2);
+
+
+
 
 int 
 main(/*int argc, char const *argv[]*/)
@@ -32,8 +36,12 @@ main(/*int argc, char const *argv[]*/)
 
 	printf("\n\n");
 
+	PrivateKey key = dc_key_private_generate();
+
+	dc_key_private_print(&key);
 
 
-	
+	printf("\n");
+
 	return 0;
 }

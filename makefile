@@ -1,7 +1,7 @@
 CC := clang
-CFLAGS := -Werror -Wall -Wextra -pedantic -std=c11 #-pthread
+CFLAGS := -Werror -Wall -Wextra -pedantic -std=c11 -Isecp256k1/include #-pthread
 
-OBJ := main.o hash.o keccak.o
+OBJ := main.o hash.o keccak.o key.o
 TARGET := deweycore
 
 .PHONY: all clean depend
@@ -16,7 +16,7 @@ libsecp256k1.a:
 	mv secp256k1/.libs/libsecp256k1.a .
 
 $(TARGET): libsecp256k1.a $(OBJ)
-	$(CC) libsecp256k1.a $(OBJ) -o $(TARGET)
+	$(CC) $(OBJ) libsecp256k1.a -o $(TARGET)
 
 clean:
 	-rm *.o

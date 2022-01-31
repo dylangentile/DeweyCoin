@@ -7,7 +7,7 @@
 
 typedef struct
 {
-	uint8_t byte_array[DC_HASH_SIZE];
+	uint8_t bytes[DC_HASH_SIZE];
 } Hash;
 
 
